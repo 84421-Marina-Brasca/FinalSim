@@ -156,13 +156,13 @@ namespace Final_SIM_Brasca.Entidades
                 var builder = new StringBuilder().AppendJoin(';',               //SEPARADOR CSV
                     i+1,                                                          //Nro Iteracion
 
-                    valorRndA, durA, valorRndB, durB,                  // RNDs y Duraciones A y B
+                    Truncar(valorRndA), durA, Truncar(valorRndB), durB,                  // RNDs y Duraciones A y B
 
                     DuracionM,                                         // Duracion M a comparar con A+B (ver si sacarla)
 
                     durA + durB > DuracionM ? "Si" : "No", contadorConvieneM,   //AB vs M
 
-                    valorRndC, durC, valorRndD, durD,                 // RNDs y Duraciones C y D
+                    Truncar(valorRndC), durC, Truncar(valorRndD), durD,                 // RNDs y Duraciones C y D
                     
                     durTotalAB,                                                 //ProyectoAB vs Lim
                     durTotalAB < DuracionLimite ? "Si" : "No",
@@ -179,6 +179,12 @@ namespace Final_SIM_Brasca.Entidades
             }
 
             CSVWriter.Close();
+        }
+
+        public double Truncar(double valor)
+        {
+            double factor = Math.Pow(10, 3);
+            return Math.Truncate(valor * factor) / factor;
         }
     }
 }

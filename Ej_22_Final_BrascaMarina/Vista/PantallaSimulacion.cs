@@ -72,32 +72,32 @@ namespace Final_SIM_Brasca.Vista
                     // Convertir los valores de los TextBox a arreglos de double e int
                     probabA = new double[]
                     {
-                        double.Parse(txt_probA_1.Text),
-                        double.Parse(txt_probA_2.Text),
-                        double.Parse(txt_probA_3.Text),
-                        double.Parse(txt_probA_4.Text)
+                        double.Parse(txt_probA_1.Text)/100,
+                        double.Parse(txt_probA_2.Text)/100,
+                        double.Parse(txt_probA_3.Text)/100,
+                        double.Parse(txt_probA_4.Text)/100
                     };
 
                     probabB = new double[]
                     {
-                        double.Parse(txt_probB_1.Text),
-                        double.Parse(txt_probB_2.Text),
-                        double.Parse(txt_probB_3.Text)
+                        double.Parse(txt_probB_1.Text)/100,
+                        double.Parse(txt_probB_2.Text)/100,
+                        double.Parse(txt_probB_3.Text)/100
                     };
 
                     probabC = new double[]
                     {
-                        double.Parse(txt_probC_1.Text),
-                        double.Parse(txt_probC_2.Text),
-                        double.Parse(txt_probC_3.Text),
-                        double.Parse(txt_probC_4.Text),
-                        double.Parse(txt_probC_5.Text)
+                        double.Parse(txt_probC_1.Text)/100,
+                        double.Parse(txt_probC_2.Text)/100,
+                        double.Parse(txt_probC_3.Text)/100,
+                        double.Parse(txt_probC_4.Text)/100,
+                        double.Parse(txt_probC_5.Text)/100
                     };
 
                     probabD = new double[]
                     {
-                        double.Parse(txt_probD_1.Text),
-                        double.Parse(txt_probD_2.Text)
+                        double.Parse(txt_probD_1.Text)/100,
+                        double.Parse(txt_probD_2.Text)/100
                     };
 
                     tiemposA = new int[]
@@ -141,7 +141,8 @@ namespace Final_SIM_Brasca.Vista
                     //Carga la grilla con los contenidos del CSV
 
                     // aca metodo CSV reader devuelve las 2 probabilidades a cargar
-                    double[] resultado = CSVReader.LoadCsvData(CSV);
+                    int desde = int.Parse(txt_desde.Text);
+                    double[] resultado = CSVReader.LoadCsvData(CSV, desde);
                     dgv_Simulacion.DataSource = CSV;
 
                     // Estetico Columnas Tabla
@@ -156,7 +157,6 @@ namespace Final_SIM_Brasca.Vista
                     txt_probCumplirM.Text = resultado[1].ToString();
 
 
-                    /// CAMBIAR LAS VARIABLES COMPARADAS Y LAS CITADAS EN LA RESPUESTA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     if (resultado[0] > resultado[1])
                     {
                         lbl_conclusion.Text = "Se recomienda mantener las actividades A y B, ya que se lograría\n" +
@@ -171,8 +171,8 @@ namespace Final_SIM_Brasca.Vista
                         }
                         else
                         {
-                            lbl_conclusion.Text = "Se recomienda imponer una actividad M\n" +
-                                "ya que se lograría con mayor frecuencia \nterminar el proyecto en menos de " + txt_duracionLimite.Text + " semanas \nrespecto al uso de las actividades A y B.";
+                            lbl_conclusion.Text = "Se recomienda imponer una actividad M ya que se lograría\n" +
+                                "con mayor frecuencia terminar el proyecto en un tiempo menor \na las " + txt_duracionLimite.Text + " semanas respecto al uso de las actividades A y B.";
                         }
                     }
                 }
