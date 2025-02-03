@@ -36,18 +36,18 @@ namespace Final_SIM_Brasca.Entidades
                 dt.Columns.Add("RND B");
                 dt.Columns.Add("Duracion B");
                 dt.Columns.Add("Duracion M"); //podría no ir
-                dt.Columns.Add("conviene M?");
-                dt.Columns.Add("cont. conviene M");
+                dt.Columns.Add("Conviene M?");
+                dt.Columns.Add("Cont. conviene M");
                 dt.Columns.Add("RND C");
                 dt.Columns.Add("Duracion C");
                 dt.Columns.Add("RND D");
                 dt.Columns.Add("Duracion D");
                 dt.Columns.Add("Total con A+B");
                 dt.Columns.Add("c/A+B cumple límite?"); 
-                dt.Columns.Add("cont. A+B cumple");
+                dt.Columns.Add("Cont. A+B cumple");
                 dt.Columns.Add("Total con M");
                 dt.Columns.Add("c/M cumple límite?");
-                dt.Columns.Add("cont. M cumple");
+                dt.Columns.Add("Cont. M cumple");
                 // 18 COLUMNAS
 
 
@@ -55,11 +55,11 @@ namespace Final_SIM_Brasca.Entidades
 
                 // Inicializamos las estadísticas para evitar errores
 
-                #region Valores de Calculo
-                lineList[7] = "0"; // cont. conviene M
-                lineList[14] = "0"; // cont. A+B cumple
-                lineList[17] = "0"; // cont. M cumple
-                #endregion
+                //#region Valores de Calculo
+                //lineList[7] = "0"; // cont. conviene M
+                //lineList[14] = "0"; // cont. A+B cumple
+                //lineList[17] = "0"; // cont. M cumple
+                //#endregion
 
                 using (streamReader)
                 {
@@ -75,18 +75,18 @@ namespace Final_SIM_Brasca.Entidades
                         lineRow["RND B"] = lineList[3];
                         lineRow["Duracion B"] = lineList[4];
                         lineRow["Duracion M"] = lineList[5];
-                        lineRow["conviene M?"] = lineList[6]; 
-                        lineRow["cont.conviene M"] = lineList[7];
+                        lineRow["Conviene M?"] = lineList[6]; 
+                        lineRow["Cont. conviene M"] = lineList[7];
                         lineRow["RND C"] = lineList[8];
                         lineRow["Duracion C"] = lineList[9];
                         lineRow["RND D"] = lineList[10];
                         lineRow["Duracion D"] = lineList[11];
                         lineRow["Total con A+B"] = lineList[12];
                         lineRow["c/A+B cumple límite?"] = lineList[13];
-                        lineRow["cont. A+B cumple"] = lineList[14];
+                        lineRow["Cont. A+B cumple"] = lineList[14];
                         lineRow["Total con M"] = lineList[15];
                         lineRow["c/M cumple límite?"] = lineList[16];
-                        lineRow["cont. M cumple"] = lineList[17];
+                        lineRow["Cont. M cumple"] = lineList[17];
 
 
                         dt.Rows.Add(lineRow);

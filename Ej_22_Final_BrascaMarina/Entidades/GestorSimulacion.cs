@@ -148,13 +148,13 @@ namespace Final_SIM_Brasca.Entidades
                     contadorMenosDeLimiteAB++;
 
                 var durTotalM = DuracionM + +durC + durD;
-                if (durTotalAB < DuracionLimite)
+                if (durTotalM< DuracionLimite)
                     contadorMenosDeLimiteM++;
 
                 // Escribir linea CSV...
 
                 var builder = new StringBuilder().AppendJoin(';',               //SEPARADOR CSV
-                    i,                                                          //Nro Iteracion
+                    i+1,                                                          //Nro Iteracion
 
                     valorRndA, durA, valorRndB, durB,                  // RNDs y Duraciones A y B
 

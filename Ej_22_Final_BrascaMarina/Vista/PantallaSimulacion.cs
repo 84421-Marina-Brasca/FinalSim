@@ -155,19 +155,26 @@ namespace Final_SIM_Brasca.Vista
                     txt_probCumplirAB.Text = resultado[0].ToString(); // agregar despues manejo de errores en caso devuelva null
                     txt_probCumplirM.Text = resultado[1].ToString();
 
-                    
+
                     /// CAMBIAR LAS VARIABLES COMPARADAS Y LAS CITADAS EN LA RESPUESTA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     if (resultado[0] > resultado[1])
                     {
-                        lbl_conclusion.Text = "Se recomienda mantener las actividades A y B,\n ya que se lograría con mayor frecuencia terminar el " +
-                            "proyecto en un tiempo menor a las (" + txt_duracionLimite.Text + ") semanas consideradas respecto al uso de la actividad M.";
+                        lbl_conclusion.Text = "Se recomienda mantener las actividades A y B, ya que se lograría\n" +
+                            "con mayor frecuencia terminar el proyecto en un tiempo menor a \nlas " + txt_duracionLimite.Text + " semanas consideradas respecto al uso de la actividad M.";
                     }
                     else
                     {
-                        lbl_conclusion.Text = "Se recomienda imponer una actividad M que resuma las actividades A y B,\n ya que se lograría con mayor " +
-                            "frecuencia terminar el proyecto en un tiempo menor a las (" + txt_duracionLimite.Text + ") semanas consideradas respecto al uso de las actividades A y B.";
+                        if (resultado[0] == resultado[1])
+                        {
+                            lbl_conclusion.Text = "No se puede determinar una recomendación\n" +
+                                "ya que se lograría con la misma frecuencia \nterminar el proyecto en menos de " + txt_duracionLimite.Text + " semanas \nrespecto al uso de las actividades A y B o M.";
+                        }
+                        else
+                        {
+                            lbl_conclusion.Text = "Se recomienda imponer una actividad M\n" +
+                                "ya que se lograría con mayor frecuencia \nterminar el proyecto en menos de " + txt_duracionLimite.Text + " semanas \nrespecto al uso de las actividades A y B.";
+                        }
                     }
-
                 }
                 //Las siguientes dos lineas eran para desactivar el aviso de txt vacio a rellenar
                 //erro.SetError(this.txt_simulaciones, String.Empty);
