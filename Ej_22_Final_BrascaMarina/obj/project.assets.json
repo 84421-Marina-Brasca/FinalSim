@@ -8,19 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Marina Constanza\\.nuget\\packages\\": {}
+    "C:\\Users\\Marina Constanza\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marina Constanza\\Desktop\\Simulacion-TPs-UTN\\TP5\\TP5\\Final-MB-Ejercicio22.csproj",
-      "projectName": "Final-MB-Ejercicio22",
-      "projectPath": "C:\\Users\\Marina Constanza\\Desktop\\Simulacion-TPs-UTN\\TP5\\TP5\\Final-MB-Ejercicio22.csproj",
+      "projectUniqueName": "C:\\Users\\Marina Constanza\\Documents\\GitHub\\Final_SIM_Brasca\\Ej_22_Final_BrascaMarina\\Final_SIM_Brasca.csproj",
+      "projectName": "Final_SIM_Brasca",
+      "projectPath": "C:\\Users\\Marina Constanza\\Documents\\GitHub\\Final_SIM_Brasca\\Ej_22_Final_BrascaMarina\\Final_SIM_Brasca.csproj",
       "packagesPath": "C:\\Users\\Marina Constanza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marina Constanza\\Desktop\\Simulacion-TPs-UTN\\TP5\\TP5\\obj\\",
+      "outputPath": "C:\\Users\\Marina Constanza\\Documents\\GitHub\\Final_SIM_Brasca\\Ej_22_Final_BrascaMarina\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\Marina Constanza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

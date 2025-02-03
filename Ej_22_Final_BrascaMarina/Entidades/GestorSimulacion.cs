@@ -4,14 +4,16 @@ using System.Linq;
 using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
+using Final_SIM_Brasca.Vista;
 
-namespace TP5.Entidades
+namespace Final_SIM_Brasca.Entidades
 {
     internal class GestorSimulacion
     {
         public string Datos = @"./datos.csv";
 
         int IteracionesTotales;
+        int MostrarDesde;
 
         Random RndA;
         Random RndB;
@@ -33,33 +35,34 @@ namespace TP5.Entidades
         double[] ProbabilidadesD;
         int[] TiemposD;
 
-        public GestorSimulacion(double inicioImp, int Cantidad, double FinSim, double limsLlegFutbol, double[] limsLlegHandball,
-            double[] limsLlegBasket, double[] limsOcupFutbol, double[] limsOcupHandball, double[] limsOcupBasket,
-            double h, double baskD, double futD, double handD)
+        public GestorSimulacion(int cantSimulaciones, int mostrarDesde, int duracionM, int duracionLimite, double[] probabA, int[] tiemposA,
+            double[] probabB, int[] tiemposB, double[] probabC, int[] tiemposC, double[] probabD, int[] tiemposD)
         {
             RndA = new Random();
             RndB = new Random();
             RndC = new Random();
             RndD = new Random();
 
-            // DuracionM = duracionM;
-            DuracionM = 13;
+            IteracionesTotales = cantSimulaciones;
 
-            // DuracionLimite = duracionLimite;
-            DuracionLimite = 33;
+            MostrarDesde = mostrarDesde;
 
-            //ProbabilidadesA = probabilidadesA;
-            ProbabilidadesA = new double[] { 0.25, 0.35, 0.25, 0.15 };
-            TiemposA = new int[] { 5, 6, 7 };
+            DuracionM = duracionM;
 
-            ProbabilidadesB = new double[] { 0.2, 0.55, 0.25 };
-            TiemposB = new int[] { 3, 5, 7 };
+            DuracionLimite = duracionLimite;
 
-            ProbabilidadesC = new double[] { 0.1, 0.25, 0.4, 0.2, 0.5 };
-            TiemposC = new int[] { 10, 12, 14, 16, 18 };
+            ProbabilidadesA = probabA;
+            TiemposA = tiemposA;
 
-            ProbabilidadesD = new double[] { 0.6, 0.4 };
-            TiemposD = new int[] { 8, 10 };
+            ProbabilidadesB = probabB;
+            TiemposB = tiemposB;
+
+            ProbabilidadesC = probabA;
+            TiemposC = tiemposC;
+
+            ProbabilidadesD = probabA;
+            TiemposD = tiemposD;
+
         }
 
         #region CALCULAR DURACIONES
@@ -149,15 +152,17 @@ namespace TP5.Entidades
                     contadorMenosDeLimiteM++;
 
                 // Escribir linea CSV...
-                // , RNDs, , M, AB vs M, ...
+
                 var builder = new StringBuilder().AppendJoin(';',               //SEPARADOR CSV
                     i,                                                          //Nro Iteracion
 
-                    valorRndA, valorRndB, valorRndC, valorRndD,                 // RNDs
-                    
-                    durA, durB, durC, durD, DuracionM,                          // Duraciones
-                    
+                    valorRndA, durA, valorRndB, durB,                  // RNDs y Duraciones A y B
+
+                    DuracionM,                                         // Duracion M a comparar con A+B (ver si sacarla)
+
                     durA + durB > DuracionM ? "Si" : "No", contadorConvieneM,   //AB vs M
+
+                    valorRndC, durC, valorRndD, durD,                 // RNDs y Duraciones C y D
                     
                     durTotalAB,                                                 //ProyectoAB vs Lim
                     durTotalAB < DuracionLimite ? "Si" : "No",
@@ -167,6 +172,8 @@ namespace TP5.Entidades
                     durTotalM < DuracionLimite ? "Si" : "No",
                     contadorMenosDeLimiteM
                 );
+
+
 
                 CSVWriter.WriteLine(builder.ToString());
             }

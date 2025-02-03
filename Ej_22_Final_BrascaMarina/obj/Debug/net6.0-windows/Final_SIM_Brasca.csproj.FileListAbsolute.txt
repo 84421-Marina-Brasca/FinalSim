@@ -1,0 +1,8 @@
+C:\Users\Marina Constanza\Documents\GitHub\Final_SIM_Brasca\Ej_22_Final_BrascaMarina\obj\Debug\net6.0-windows\Final_SIM_Brasca.csproj.AssemblyReference.cache
+C:\Users\Marina Constanza\Documents\GitHub\Final_SIM_Brasca\Ej_22_Final_BrascaMarina\obj\Debug\net6.0-windows\Final_SIM_Brasca.Vista.Form1.resources
+C:\Users\Marina Constanza\Documents\GitHub\Final_SIM_Brasca\Ej_22_Final_BrascaMarina\obj\Debug\net6.0-windows\TP4_SIM.Formularios.PantallaSimulacion.resources
+C:\Users\Marina Constanza\Documents\GitHub\Final_SIM_Brasca\Ej_22_Final_BrascaMarina\obj\Debug\net6.0-windows\Final_SIM_Brasca.csproj.GenerateResource.cache
+C:\Users\Marina Constanza\Documents\GitHub\Final_SIM_Brasca\Ej_22_Final_BrascaMarina\obj\Debug\net6.0-windows\Final_SIM_Brasca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marina Constanza\Documents\GitHub\Final_SIM_Brasca\Ej_22_Final_BrascaMarina\obj\Debug\net6.0-windows\Final_SIM_Brasca.AssemblyInfoInputs.cache
+C:\Users\Marina Constanza\Documents\GitHub\Final_SIM_Brasca\Ej_22_Final_BrascaMarina\obj\Debug\net6.0-windows\Final_SIM_Brasca.AssemblyInfo.cs
+C:\Users\Marina Constanza\Documents\GitHub\Final_SIM_Brasca\Ej_22_Final_BrascaMarina\obj\Debug\net6.0-windows\Final_SIM_Brasca.csproj.CoreCompileInputs.cache

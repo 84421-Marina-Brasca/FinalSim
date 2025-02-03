@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Final-MB-Ejercicio22")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e59158767aa4a3f01e9395ea25e4ff7772b1d05")]
 [assembly: System.Reflection.AssemblyProductAttribute("Final-MB-Ejercicio22")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Final-MB-Ejercicio22")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

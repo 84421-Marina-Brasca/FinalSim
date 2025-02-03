@@ -1,4 +1,7 @@
-namespace TP5
+using Final_SIM_Brasca.Vista;
+
+
+namespace Final_SIM_Brasca
 {
     internal static class Program
     {
@@ -10,8 +13,9 @@ namespace TP5
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+
             ApplicationConfiguration.Initialize();
-            Application.Run(new PantallaSimuladorPolideportivo());
+            Application.Run(new PantallaSimulacion());
         }
     }
 }
