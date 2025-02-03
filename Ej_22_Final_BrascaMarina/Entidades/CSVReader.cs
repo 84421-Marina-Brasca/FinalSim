@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿//using System;
+//using System.Collections.Generic;
 using System.Data;
-using System.Linq;
+//using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
+//using System.Threading.Tasks;
+//using System.Windows.Forms;
+//using System.IO;
 using System.Data.Common;
 
 namespace Final_SIM_Brasca.Entidades
@@ -35,30 +35,30 @@ namespace Final_SIM_Brasca.Entidades
                 dt.Columns.Add("Duracion A");
                 dt.Columns.Add("RND B");
                 dt.Columns.Add("Duracion B");
-                dt.Columns.Add("Iteracion");
-                dt.Columns.Add("Iteracion");
-                dt.Columns.Add("Iteracion");
-                dt.Columns.Add("Iteracion");
-                dt.Columns.Add("Iteracion");
-                dt.Columns.Add("Iteracion");
-                dt.Columns.Add("Iteracion");
-                dt.Columns.Add("Iteracion");
+                dt.Columns.Add("Duracion M"); //podría no ir
+                dt.Columns.Add("conviene M?");
+                dt.Columns.Add("cont. conviene M");
+                dt.Columns.Add("RND C");
+                dt.Columns.Add("Duracion C");
+                dt.Columns.Add("RND D");
+                dt.Columns.Add("Duracion D");
+                dt.Columns.Add("Total con A+B");
+                dt.Columns.Add("c/A+B cumple límite?"); 
+                dt.Columns.Add("cont. A+B cumple");
+                dt.Columns.Add("Total con M");
+                dt.Columns.Add("c/M cumple límite?");
+                dt.Columns.Add("cont. M cumple");
+                // 18 COLUMNAS
 
-                // AGREGAR TODOS LOS OTROS CABEZALES IGUAL A ESTE!!!
 
                 var lineList = new List<string>();
 
                 // Inicializamos las estadísticas para evitar errores
 
                 #region Valores de Calculo
-                lineList[19]= "0"; // T Espera AC Basket
-                lineList[20]= "0"; // T Espera AC Futbol
-                lineList[21] = "0"; // T Espera AC Handball
-                lineList[22] = "0"; // Contador EsperaFinalizada Basket
-                lineList[23] = "0"; // Contador EsperaFinalizada Futbol
-                lineList[24] = "0"; // Contador EsperaFinalizada Handball
-                lineList[25] = "0"; // Cont Llegadas
-                lineList[26] = "0"; // Cont Retirados sin Jugar
+                lineList[7] = "0"; // cont. conviene M
+                lineList[14] = "0"; // cont. A+B cumple
+                lineList[17] = "0"; // cont. M cumple
                 #endregion
 
                 using (streamReader)
@@ -69,9 +69,25 @@ namespace Final_SIM_Brasca.Entidades
                     {
                         lineList = currentLine.Split(';').ToList();
                         DataRow lineRow = dt.NewRow();
-
                         lineRow["Iteracion"] = lineList[0];
-                        // AGREGAR TODOS LOS OTROS CABEZALES IGUAL A ESTE!!!
+                        lineRow["RND A"] = lineList[1];
+                        lineRow["Duracion A"] = lineList[2];
+                        lineRow["RND B"] = lineList[3];
+                        lineRow["Duracion B"] = lineList[4];
+                        lineRow["Duracion M"] = lineList[5];
+                        lineRow["conviene M?"] = lineList[6]; 
+                        lineRow["cont.conviene M"] = lineList[7];
+                        lineRow["RND C"] = lineList[8];
+                        lineRow["Duracion C"] = lineList[9];
+                        lineRow["RND D"] = lineList[10];
+                        lineRow["Duracion D"] = lineList[11];
+                        lineRow["Total con A+B"] = lineList[12];
+                        lineRow["c/A+B cumple límite?"] = lineList[13];
+                        lineRow["cont. A+B cumple"] = lineList[14];
+                        lineRow["Total con M"] = lineList[15];
+                        lineRow["c/M cumple límite?"] = lineList[16];
+                        lineRow["cont. M cumple"] = lineList[17];
+
 
                         dt.Rows.Add(lineRow);
                     }
@@ -81,10 +97,10 @@ namespace Final_SIM_Brasca.Entidades
                 var iteracionesTotales = double.Parse(lineList[0]);
 
                 // AGREGAR INDICES CORRECTOS A LAS SIGUIENTES LINEAS
-                // var contadorMenosDeLimiteAB = double.Parse(lineList[...]);
-                // var contadorMenosDeLimiteM = double.Parse(lineList[...]);
-                var contadorMenosDeLimiteAB = 0.0;
-                var contadorMenosDeLimiteM = 0.0;
+                var contadorMenosDeLimiteAB = double.Parse(lineList[14]);
+                var contadorMenosDeLimiteM = double.Parse(lineList[17]);
+                //var contadorMenosDeLimiteAB = 0.0;
+                //var contadorMenosDeLimiteM = 0.0;
 
                 var probabilidadAB = Truncar(contadorMenosDeLimiteAB / iteracionesTotales);
                 var probabilidadM = Truncar(contadorMenosDeLimiteM / iteracionesTotales);

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Final_SIM_Brasca")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2e1c18bd8635f5b676bf1f394e048f82ea50669")]
 [assembly: System.Reflection.AssemblyProductAttribute("Final_SIM_Brasca")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Final_SIM_Brasca")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

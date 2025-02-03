@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿//using System;
+//using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
+//using System.Drawing;
+//using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+//using System.Threading.Tasks;
+//using System.Windows.Forms;
 using Final_SIM_Brasca.Entidades;
-using Final_SIM_Brasca.Vista;
+//using Final_SIM_Brasca.Vista;
 
 namespace Final_SIM_Brasca.Vista
 {
