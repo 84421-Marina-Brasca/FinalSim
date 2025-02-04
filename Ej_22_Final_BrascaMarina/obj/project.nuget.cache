@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "NgQ1Iq1xuZI=",
+  "dgSpecHash": "9qfYUN2zxZw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Marina Constanza\\Documents\\GitHub\\Final_SIM_Brasca\\Ej_22_Final_BrascaMarina\\Final_SIM_Brasca.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Marina Constanza\\Documents\\GitHub\\FinalSim\\Ej_22_Final_BrascaMarina\\Final_SIM_Brasca.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marina Constanza\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Marina Constanza\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Marina Constanza\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\Marina Constanza\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.36\\microsoft.netcore.app.host.win-x64.6.0.36.nupkg.sha512"
+  ],
   "logs": []
 }

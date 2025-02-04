@@ -68,36 +68,78 @@ namespace Final_SIM_Brasca.Vista
 
                 if (bandera == 0)
                 {
-                    
-                    // Convertir los valores de los TextBox a arreglos de double e int
+
+                    // Convertir los valores de los TextBox de percentual a probabilidad
+                    // llenar textBox Limite Superior y pasar prob y duraciones a arreglos de double e int
+
+                    double probA1 = double.Parse(txt_probA_1.Text) / 100;
+                    double probA2 = double.Parse(txt_probA_2.Text) / 100;
+                    double probA3 = double.Parse(txt_probA_3.Text) / 100;
+                    double probA4 = double.Parse(txt_probA_4.Text) / 100;
+
+                    txtLimSupA1.Text = probA1.ToString();
+                    txtLimSupA2.Text = (probA1 + probA2).ToString();
+                    txtLimSupA3.Text = (probA1 + probA2 + probA3).ToString();
+                    txtLimSupA4.Text = (probA1 + probA2 + probA3 + probA4).ToString();
+
+                    double probB1 = double.Parse(txt_probB_1.Text) / 100;
+                    double probB2 = double.Parse(txt_probB_2.Text) / 100;
+                    double probB3 = double.Parse(txt_probB_3.Text) / 100;
+
+                    txtLimSupB1.Text = probB1.ToString();
+                    txtLimSupB2.Text = (probB1 + probB2).ToString();
+                    txtLimSupB3.Text = (probB1 + probB2 + probB3).ToString();
+
+                    double probC1 = double.Parse(txt_probC_1.Text) / 100;
+                    double probC2 = double.Parse(txt_probC_2.Text) / 100;
+                    double probC3 = double.Parse(txt_probC_3.Text) / 100;
+                    double probC4 = double.Parse(txt_probC_4.Text) / 100;
+                    double probC5 = double.Parse(txt_probC_5.Text) / 100;
+
+
+                    txtLimSupC1.Text = probC1.ToString();
+                    txtLimSupC2.Text = (probC1 + probC2).ToString();
+                    txtLimSupC3.Text = (probC1 + probC2 + probC3).ToString();
+                    txtLimSupC4.Text = (probC1 + probC2 + probC3 + probC4).ToString();
+                    txtLimSupC5.Text = (probC1 + probC2 + probC3 + probC4 + probC5).ToString();
+
+                    double probD1 = double.Parse(txt_probD_1.Text) / 100;
+                    double probD2 = double.Parse(txt_probD_2.Text) / 100;
+
+                    txtLimSupD1.Text = probD1.ToString();
+                    txtLimSupD2.Text = (probD1 + probD2).ToString();
+
+
+
                     probabA = new double[]
                     {
-                        double.Parse(txt_probA_1.Text)/100,
-                        double.Parse(txt_probA_2.Text)/100,
-                        double.Parse(txt_probA_3.Text)/100,
-                        double.Parse(txt_probA_4.Text)/100
+                        probA1,
+                        probA2,
+                        probA3,
+                        probA4
                     };
 
                     probabB = new double[]
                     {
-                        double.Parse(txt_probB_1.Text)/100,
-                        double.Parse(txt_probB_2.Text)/100,
-                        double.Parse(txt_probB_3.Text)/100
+                        probB1,
+                        probB2,
+                        probB3
                     };
 
                     probabC = new double[]
                     {
-                        double.Parse(txt_probC_1.Text)/100,
-                        double.Parse(txt_probC_2.Text)/100,
-                        double.Parse(txt_probC_3.Text)/100,
-                        double.Parse(txt_probC_4.Text)/100,
-                        double.Parse(txt_probC_5.Text)/100
+                        probC1,
+                        probC2,
+                        probC3,
+                        probC4,
+                        probC5
+
                     };
 
                     probabD = new double[]
                     {
-                        double.Parse(txt_probD_1.Text)/100,
-                        double.Parse(txt_probD_2.Text)/100
+                        probD1,
+                        probD2
                     };
 
                     tiemposA = new int[]
@@ -131,7 +173,7 @@ namespace Final_SIM_Brasca.Vista
                     };
 
                     GestorSimulacion gestorSimulacion = new GestorSimulacion(int.Parse(txt_cant_simulaciones.Text), int.Parse(txt_desde.Text), int.Parse(txt_duracionM.Text), int.Parse(txt_duracionLimite.Text), probabA, tiemposA,
-                    probabB,tiemposB,probabC,tiemposC,probabD,tiemposD);
+                    probabB, tiemposB, probabC, tiemposC, probabD, tiemposD);
 
                     gestorSimulacion.Simular();
 
@@ -183,17 +225,17 @@ namespace Final_SIM_Brasca.Vista
 
         }
 
-     
+
 
         private void Form_Load(object sender, EventArgs e)
-                {
-                    lbl_conclusion.Text = "";
-                    
-                }
+        {
+            lbl_conclusion.Text = "";
+
+        }
 
 
         // Validaciones de txt
-       
+
         private void txt_decimal_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -223,7 +265,7 @@ namespace Final_SIM_Brasca.Vista
                 }
             }
         }
-    
+
 
         private void txt_entero_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -233,5 +275,6 @@ namespace Final_SIM_Brasca.Vista
                 e.Handled = true; // Bloquea el carácter ingresado
             }
         }
+
     }
 }
